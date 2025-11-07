@@ -3,28 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jinyoung Studio | Particles Cursor</title>
+  <title>Jinyoung UI Studio | Particles Cursor</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- 상단 고정 메인 버튼 -->
+  <header>
+    <a href="./" class="home-btn">🏠 메인 페이지</a>
+  </header>
+
   <div id="app">
     <div id="hero">
       <h1>PARTICLES<br>CURSOR</h1>
       <p class="desc">마우스를 움직이면 입자가 반응하고, 클릭 시 색상과 모션이 변합니다.</p>
     </div>
 
-    <!-- 좌측 콘솔 아이콘 -->
-    <div class="nav-icon left" onclick="window.location.href='./deep-space/'">
-      ⬅
-    </div>
-
-    <!-- 우측 콘솔 아이콘 -->
-    <div class="nav-icon right" onclick="window.location.href='./cube/'">
-      ⮕
-    </div>
+    <!-- 좌우 이동 -->
+    <div class="nav-icon left" onclick="window.location.href='./deep-space/'">⬅</div>
+    <div class="nav-icon right" onclick="window.location.href='./cube/'">⮕</div>
 
     <footer>
       © 2025 박진영 | 동신대학교 UI 템플릿 스튜디오

@@ -1,6 +1,4 @@
-import { particlesCursor } from './lib/threejs-toys.module.min.js';
-// (CDN 버전 쓰고 싶다면 위 줄 대신 아래 줄 사용)
-// import { particlesCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js';
+import { particlesCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js';
 
 const pc = particlesCursor({
   el: document.getElementById('app'),
