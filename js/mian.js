@@ -1,10 +1,3 @@
-// 페이지 페이드인
-window.addEventListener("DOMContentLoaded", () => {
-  document.body.classList.add("loaded");
-});
-
-/* ===== 진영님 제공 코드 전체 (starfield, dotgrid, gsap 등) ===== */
-
 // Setup canvas and context
 const canvas = document.getElementById("space");
 const ctx = canvas.getContext("2d");
