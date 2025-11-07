@@ -3,12 +3,12 @@ import { particlesCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/thre
 const pc = particlesCursor({
   el: document.getElementById('app'),
   gpgpuSize: 512,
-  colors: [0x00ffff, 0x0080ff],
-  color: 0xffffff,
-  coordScale: 0.6,
+  colors: [0x00ff00, 0x0000ff],
+  color: 0xff0000,
+  coordScale: 0.5,
   noiseIntensity: 0.001,
   noiseTimeCoef: 0.0001,
-  pointSize: 6,
+  pointSize: 5,
   pointDecay: 0.0025,
   sleepRadiusX: 250,
   sleepRadiusY: 250,
@@ -16,9 +16,10 @@ const pc = particlesCursor({
   sleepTimeCoefY: 0.002
 });
 
+// 마우스 클릭 시 모션 랜덤 변경
 document.body.addEventListener('click', () => {
   pc.uniforms.uColor.value.set(Math.random() * 0xffffff);
   pc.uniforms.uCoordScale.value = 0.001 + Math.random() * 2;
   pc.uniforms.uNoiseIntensity.value = 0.0001 + Math.random() * 0.001;
-  pc.uniforms.uPointSize.value = 2 + Math.random() * 8;
+  pc.uniforms.uPointSize.value = 1 + Math.random() * 10;
 });
