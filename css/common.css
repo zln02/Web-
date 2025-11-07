@@ -1,34 +1,48 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-
-:root {
-  --color-bg: #0a0a1a;
-  --color-text: #ffffff;
-  --accent-primary: #4f9cff;
-  --accent-secondary: #2a5cff;
-  --accent-tertiary: #a0c8ff;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: "Press Start 2P", system-ui;
-  overflow-x: hidden;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-body.loaded {
-  opacity: 1;
-}
-
-a {
-  color: var(--color-text);
-  text-decoration: none;
+/* ==== 기본 화살표 유지 ==== */
+.nav-icon {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 24px;
   cursor: pointer;
+  z-index: 9999;
+  transition: all 0.25s ease;
+}
+.nav-icon.left { left: 20px; }
+.nav-icon.right { right: 20px; }
+.nav-icon:hover {
+  background: rgba(255,255,255,0.8);
+  color: black;
+}
+
+/* ==== 페이지 전환 애니메이션 ==== */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.page-transition.active {
+  pointer-events: all;
+  opacity: 1;
+  transform: scaleY(1);
+  transition: transform 0.5s ease-in-out, opacity 0.2s ease;
+}
+.page-transition.fade-out {
+  transform-origin: bottom;
 }
