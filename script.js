@@ -1,4 +1,4 @@
-import { particlesCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js';
+import { particlesCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js'
 
 const pc = particlesCursor({
   el: document.getElementById('app'),
@@ -14,12 +14,11 @@ const pc = particlesCursor({
   sleepRadiusY: 250,
   sleepTimeCoefX: 0.001,
   sleepTimeCoefY: 0.002
-});
+})
 
-// 마우스 클릭 시 모션 랜덤 변경
 document.body.addEventListener('click', () => {
-  pc.uniforms.uColor.value.set(Math.random() * 0xffffff);
-  pc.uniforms.uCoordScale.value = 0.001 + Math.random() * 2;
-  pc.uniforms.uNoiseIntensity.value = 0.0001 + Math.random() * 0.001;
-  pc.uniforms.uPointSize.value = 1 + Math.random() * 10;
-});
+  pc.uniforms.uColor.value.set(Math.random() * 0xffffff)
+  pc.uniforms.uCoordScale.value = 0.001 + Math.random() * 2
+  pc.uniforms.uNoiseIntensity.value = 0.0001 + Math.random() * 0.001
+  pc.uniforms.uPointSize.value = 1 + Math.random() * 10
+})
