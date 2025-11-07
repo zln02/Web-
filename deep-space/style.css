@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: "PPSupplyMono";
-  src: url("https://assets.codepen.io/7558/PPSupplyMono-Variable.woff2") format("woff2");
+  src: url("https://assets.codepen.io/7558/PPSupplyMono-Variable.woff2")
+    format("woff2");
   font-weight: 100 900;
   font-style: normal;
 }
@@ -83,7 +84,8 @@ body {
 }
 
 @keyframes ghostFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -92,12 +94,19 @@ body {
 }
 
 @keyframes eyePulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
     transform: scale(1.3);
   }
+}
+
+/* Remove the old ghost-orb and ghost-trail styles */
+.ghost-orb,
+.ghost-trail {
+  display: none;
 }
 
 .loading-text {
@@ -110,7 +119,8 @@ body {
 }
 
 @keyframes textPulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -150,7 +160,6 @@ body {
   color: #e0e0e0;
   opacity: 0;
   transition: opacity 1.5s ease-in;
-  pointer-events: none;
 }
 
 .content.fade-in {
@@ -188,49 +197,4 @@ canvas {
 
 canvas.fade-in {
   opacity: 1 !important;
-}
-
-/* Navigation Icons */
-.nav-icon {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
-  user-select: none;
-  z-index: 100;
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
-
-.nav-icon:hover {
-  opacity: 1;
-  transform: translateY(-50%) scale(1.1);
-}
-
-.nav-icon.left { 
-  left: 30px; 
-}
-
-.nav-icon.right { 
-  right: 30px; 
-}
-
-/* Home Button */
-.home-icon {
-  position: fixed;
-  top: 25px;
-  left: 25px;
-  font-size: 1.8rem;
-  color: #fff;
-  cursor: pointer;
-  z-index: 200;
-  opacity: 0.8;
-  transition: all 0.3s ease;
-}
-
-.home-icon:hover {
-  opacity: 1;
-  transform: scale(1.2);
 }
