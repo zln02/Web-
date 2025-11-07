@@ -1,76 +1,101 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ethereal Glow | Main</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div id="errorMessage" class="error-message"></div>
-    <div id="fallbackBg" class="fallback-bg"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jinyoung UI 템플릿 스튜디오 | 동신대학교</title>
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    body {
+      background: linear-gradient(120deg, #141e30, #243b55);
+      color: #fff;
+      font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    p.subtext {
+      opacity: 0.8;
+      margin-bottom: 40px;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 90%;
+      max-width: 900px;
+    }
+    .card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.2);
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    footer img {
+      width: 120px;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧩 Jinyoung UI 템플릿 스튜디오</h1>
+  <p class="subtext">
+    인터랙티브한 웹 애니메이션 템플릿을 체험하고,  
+    나만의 웹사이트 디자인에 활용해보세요.
+  </p>
 
-    <div class="audio-enable">
-      <p>ENTER EXPERIENCE<br />WITH AUDIO</p>
-      <button class="enable-button" id="enableBtn">START</button>
-    </div>
+  <div class="grid">
+    <div class="card"><a href="./cube/">🌀 Tubes Cursor 효과</a></div>
+    <div class="card"><a href="./deep-space/">👻 Ethereal Specter (심연의 유령)</a></div>
+  </div>
 
-    <div class="preloader" id="preloader">
-      <span id="counter">[000]</span>
-    </div>
+  <footer>
+    <p>© 2025 박진영 | 동신대학교 컴퓨터공학과</p>
+    <img src="https://upload.wikimedia.org/wikipedia/ko/a/a2/Dongshin_University_logo.png" alt="동신대학교 로고">
+  </footer>
 
-    <canvas id="canvas"></canvas>
-
-    <p class="text-element description">
-      THE ARCHIVE COLLECTS RECORDS OF ABANDONED WORLDS AND LOST TECHNOLOGIES, WAITING TO BE DISCOVERED.
-    </p>
-
-    <nav class="text-element nav-links">
-      <a id="cubeLink" href="#">_CUBE</a>
-      <a href="#">_DEEP SPACE</a>
-      <a href="#">_FORBIDDEN ZONES</a>
-      <a href="#">_EXODUS LOGS</a>
-      <a href="./deep-space/">_DEEP SPACE</a>
-    </nav>
-
-    <div class="text-element footer">
-      <p>
-        Err: [404 - SIGNAL LOST]<br />
-        SYSTEM TIME: CYCLE 2187.42<br />
-        <span style="opacity: 0.7; font-size: 0.6rem;">PRESS 'H' TO TOGGLE REFRACTION CONTROLS</span>
-      </p>
-    </div>
-
-    <p class="text-element division">
-      PERFORMANCE ANALYSIS: <span id="fpsCounter"></span> FPS<br />
-      OPTICAL REFRACTION ENGINE: ONLINE<br />
-      ACCESS LEVEL: RESTRICTED.<br />
-      TRACE INITIATED: SOURCE UNKNOWN.
-    </p>
-
-    <p class="text-element signal">_Uplink Pending...</p>
-
-    <div class="text-element central-text">
-      THE VAULT RETAINS ECHOES OF CIVILIZATIONS ERASED BY TIME<br />
-      DEAD SYSTEMS. BROKEN SIGNALS. MYTHS WRITTEN IN CODE.
-    </div>
-
-    <audio id="startClickSound" preload="auto">
-      <source src="https://assets.codepen.io/7558/preloader-2s-001.mp3" type="audio/mpeg" />
-    </audio>
-
-    <audio id="preloaderSound" preload="auto">
-      <source src="https://assets.codepen.io/7558/preloader-3s-002.mp3" type="audio/mpeg" />
-    </audio>
-
-    <audio id="hoverSound" preload="auto">
-      <source src="https://assets.codepen.io/7558/preloader-2s-001.mp3" type="audio/mpeg" />
-    </audio>
-
-    <audio id="backgroundMusic" loop preload="auto">
-      <source src="https://assets.codepen.io/7558/cinematic-02.mp3" type="audio/mpeg" />
-    </audio>
-
-    <script type="module" src="./script.js"></script>
-  </body>
+  <script>
+    // DEEP SPACE 클릭 안 되는 문제 해결 (JS 강제 이벤트 등록)
+    document.addEventListener("DOMContentLoaded", () => {
+      const deepLink = document.querySelector('a[href="./deep-space/"]');
+      if (deepLink) {
+        deepLink.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = "./deep-space/index.html";
+        });
+      }
+    });
+  </script>
+</body>
 </html>
