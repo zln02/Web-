@@ -1,101 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ethereal Glow | 메인</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div id="errorMessage" class="error-message"></div>
-    <div id="fallbackBg" class="fallback-bg"></div>
-
-    <!-- 🔇 사운드 제거 버전 -->
-    <!-- 기본 오디오 안내 비활성화 (START 버튼 숨김) -->
-    <div class="audio-enable" style="display: none;">
-      <p>ENTER EXPERIENCE<br />WITH AUDIO</p>
-      <button class="enable-button" id="enableBtn">START</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jinyoung Studio | Particles Cursor</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <div id="hero">
+      <h1>PARTICLES<br/>CURSOR</h1>
+      <p class="desc">마우스를 움직이면 입자가 반응하고, 클릭 시 색상과 모션이 변합니다.</p>
     </div>
 
-    <div class="preloader" id="preloader">
-      <span id="counter">[000]</span>
-    </div>
+    <div class="nav-icon left" onclick="window.location.href='./deep-space/'">⬅</div>
+    <div class="nav-icon right" onclick="window.location.href='./cube/'">⮕</div>
 
-    <canvas id="canvas"></canvas>
+    <footer>© 2025 박진영 | 동신대학교 UI 템플릿 스튜디오</footer>
+  </div>
 
-    <p class="text-element description">
-      UI 템플릿 갤러리를 감상하고, 각 사이트의 예시 디자인을 확인할 수 있습니다.
-    </p>
-
-    <nav class="text-element nav-links">
-      <a id="cubeLink" href="#">_CUBE</a>
-      <a id="deepSpaceLink" href="#">_DEEP SPACE</a>
-      <a href="#">_FORBIDDEN ZONES</a>
-      <a href="#">_EXODUS LOGS</a>
-    </nav>
-
-    <div class="text-element footer">
-      <p>
-        Err: [404 - SIGNAL LOST]<br />
-        SYSTEM TIME: CYCLE 2187.42<br />
-        <span style="opacity: 0.7; font-size: 0.6rem;">PRESS 'H' TO TOGGLE REFRACTION CONTROLS</span>
-      </p>
-    </div>
-
-    <p class="text-element division">
-      PERFORMANCE ANALYSIS: <span id="fpsCounter"></span> FPS<br />
-      OPTICAL REFRACTION ENGINE: ONLINE<br />
-      ACCESS LEVEL: RESTRICTED.<br />
-      TRACE INITIATED: SOURCE UNKNOWN.
-    </p>
-
-    <p class="text-element signal">_Uplink Pending...</p>
-
-    <div class="text-element central-text">
-      이 사이트는 박진영이 제작한 인터랙티브 웹 UI 템플릿입니다.<br />
-      각 항목은 실시간으로 시각적 애니메이션을 제공합니다.
-    </div>
-
-    <!-- 🎧 “드르륵” 효과만 유지 -->
-    <audio id="hoverSound" preload="auto">
-      <source src="https://assets.codepen.io/7558/preloader-2s-001.mp3" type="audio/mpeg" />
-    </audio>
-
-    <!-- 🔇 배경음, 프리로더음, 시작 클릭음 제거 -->
-    <!-- (startClickSound / preloaderSound / backgroundMusic 제거됨) -->
-
-    <script type="module" src="./script.js"></script>
-
-    <!-- ✅ 링크 이동 처리 스크립트 -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const hoverSound = document.getElementById("hoverSound");
-
-        // “드르륵” 사운드 유지
-        document.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("mouseenter", () => {
-            hoverSound.currentTime = 0;
-            hoverSound.play().catch(() => {});
-          });
-        });
-
-        // 페이지 이동
-        const cubeLink = document.getElementById("cubeLink");
-        const deepSpaceLink = document.getElementById("deepSpaceLink");
-
-        if (cubeLink) {
-          cubeLink.addEventListener("click", (e) => {
-            e.preventDefault();
-            window.location.href = "./cube/index.html";
-          });
-        }
-        if (deepSpaceLink) {
-          deepSpaceLink.addEventListener("click", (e) => {
-            e.preventDefault();
-            window.location.href = "./deep-space/index.html";
-          });
-        }
-      });
-    </script>
-  </body>
+  <script type="module" src="script.js"></script>
+</body>
 </html>
