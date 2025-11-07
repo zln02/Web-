@@ -5,21 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Particles | Jinyoung Studio</title>
 
+  <!-- 공용 CSS + 페이지 전용 CSS -->
   <link rel="stylesheet" href="../css/common.css" />
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
 
+  <!-- 🏠 HOME 버튼 -->
+  <div class="home-btn" onclick="window.location.href='../index.html'">HOME</div>
+
+  <!-- 기존 콘텐츠 -->
   <div id="app">
     <div id="hero">
-      <h1>PARTICLES<br/>CURSOR</h1>
-      <a target="_blank" href="https://github.com/klevron/threejs-toys">github/threejs-toys</a>
+      <h1>FLOATING<br/>LIGHTS</h1>
+      <a target="_blank" href="https://github.com/zln02/Web-">github/zln02</a>
     </div>
   </div>
 
+  <!-- 좌우 네비 아이콘 -->
   <div class="nav-icon left">⟵</div>
   <div class="nav-icon right">⟶</div>
 
+  <!-- JS -->
   <script type="module" src="./script.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script type="module" src="../js/nav.js"></script>

@@ -1,15 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cube | Jinyoung Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tubes Cursor | Jinyoung Studio</title>
 
+  <!-- ✅ 공용 CSS -->
   <link rel="stylesheet" href="../css/common.css" />
+
+  <!-- ✅ Cube 전용 CSS -->
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+  <!-- HOME -->
+  <div class="home-btn" onclick="window.location.href='../index.html'">HOME</div>
 
+  <!-- 기존 디자인 유지 -->
   <div id="app">
     <canvas id="canvas"></canvas>
     <div class="hero">
@@ -21,12 +27,13 @@
     </div>
   </div>
 
+  <!-- 네비게이션 -->
   <div class="nav-icon left">⟵</div>
   <div class="nav-icon right">⟶</div>
 
+  <!-- JS -->
   <script type="module" src="./script.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script type="module" src="../js/nav.js"></script>
-
 </body>
 </html>
