@@ -16,6 +16,7 @@ const pc = particlesCursor({
   sleepTimeCoefY: 0.002
 })
 
+// 클릭 시 입자 랜덤 모션 유지
 document.body.addEventListener('click', () => {
   pc.uniforms.uColor.value.set(Math.random() * 0xffffff)
   pc.uniforms.uCoordScale.value = 0.001 + Math.random() * 2
